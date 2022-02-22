@@ -1,4 +1,9 @@
 .text
+    # Arguments
+    #     a2: address of array cotnaining integers to sum
+    #     a3: number of elements in the array
+    # Return values
+    #     a0: the summation of the integers in the array
     .globl sum
     sum:
         addi sp, sp, -12      # adjust stack to make room for for 3 items
