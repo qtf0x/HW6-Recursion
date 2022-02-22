@@ -42,4 +42,12 @@
     #     a0: index of value
     .globl binarySearch
     binarySearch:
-        
+        addi sp, sp, -8    # space for 2 words
+        sw ra, 4(sp)       # save return address
+        sw t0, 0(sp)       # save t0, used within
+
+        binarySearch_done:
+            lw t0, 0(sp)        # restore t0
+            lw ra, 4(sp)        # restore ra
+            addi sp, sp, 8      # pop the stack frame
+            jalr zero, ra, 0    # return to the caller
