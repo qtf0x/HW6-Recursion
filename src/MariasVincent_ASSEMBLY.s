@@ -32,3 +32,14 @@
         addi sp, sp, 12       # adjust stack to delete 3 items
 
         jalr zero, ra, 0      # return result
+    
+    # Arguments
+    #     a2: address of the array
+    #     a3: start index
+    #     a4: end index
+    #     a5: value to find
+    # Return values
+    #     a0: index of value
+    .globl binarySearch
+    binarySearch:
+        
