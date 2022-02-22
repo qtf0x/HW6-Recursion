@@ -13,15 +13,15 @@ int binarySearch(int* arrAddr, int startIndex, int endIndex, int searchVal) {
 
     int midIndex = (startIndex + endIndex) / 2;
 
-    if (searchVal == arrAddr[midIndex]) {          // base case
+    if (searchVal == *(arrAddr + midIndex)) {          // base case
         return midIndex;
-    } else if (searchVal < arrAddr[midIndex]) {    // recursive case left
+    } else if (searchVal < *(arrAddr + midIndex)) {    // recursive case left
         return binarySearch(arrAddr, startIndex, midIndex - 1, searchVal);
-    } else {                                       // recursive case right
+    } else {                                          // recursive case right
         return binarySearch(arrAddr, midIndex + 1, endIndex, searchVal);
     }
 
-    return -1;                                     // fail case
+    return -1;                                        // fail case
 }
 
 int main() {
@@ -37,7 +37,7 @@ int main() {
     printf("%s", arrayNumberPrompt);
     scanf("%d", &nextInput);
     while (nextInput != 0) {
-        arrAddr[endIndex] = nextInput;
+        *(arrAddr + endIndex) = nextInput;
 
         printf("%s", arrayNumberPrompt);
         scanf("%d", &nextInput);
