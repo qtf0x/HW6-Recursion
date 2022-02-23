@@ -46,20 +46,24 @@
     #     a0: index of value
     .globl binarySearch
     binarySearch:
-        addi sp, sp, -16                 # space for 4 words
-        sw ra, 12(sp)                    # save return address
-        sw t0, 8(sp)                     # save t0, used within
-        sw t1, 4(sp)                     # save t1, used within
+        addi sp, sp, -20                 # space for 5 words
+        sw ra, 16(sp)                    # save return address
+        sw t0, 12(sp)                    # save t0, used within
+        sw t1, 8(sp)                     # save t1, used within
 
         addi a7, zero, 4                 # load PrintString service
         la a0, sumPrompt                 # a0 = &sumPrompt
         ecall
 
-        sw a3, 0(sp)                     # need a3 after jal
+        sw a2, 0(sp)                     # need a2 after jal
+        slli t1, a3, 2                   # t1 = startIndex * 4
+        add a2, a2, t1                   # a2 += startIndex * 4
+        sw a3, 4(sp)                     # need a3 after jal
         sub a3, a4, a3                   # a3 = endIndex - startIndex
         addi a3, a3, 1                   # a3++
         jal ra, sum                      # call sum procedure
-        lw a3, 0(sp)                     # restore a3
+        lw a2, 0(sp)                     # restore a2
+        lw a3, 4(sp)                     # restore a3
 
         addi a7, zero, 1                 # load PrintInt service
         ecall
@@ -97,6 +101,6 @@
             lw t1, 4(sp)        # restore t1
             lw t0, 8(sp)        # restore t0
             lw ra, 12(sp)       # restore ra
-            addi sp, sp, 16     # pop the stack frame
+            addi sp, sp, 20     # pop the stack frame
 
             jalr zero, ra, 0    # return to the caller
