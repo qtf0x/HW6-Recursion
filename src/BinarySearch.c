@@ -1,3 +1,13 @@
+/*
+    BinarySearch.c
+
+    A simple, recursive implementation of the binary search algorithm, written 
+    in C. No error-handling is performed, and input is assumed to be pre-sorted 
+    in ascending order. Returns -1 if value not found.
+
+    @author Vincent Marias
+*/
+
 #include <stdio.h>
 
 int sum(int* arrAddr, int arrSize) {
