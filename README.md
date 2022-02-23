@@ -1,3 +1,6 @@
+### CSCI 341 - Computer Organization (Spring 2022)
+# Recursive Binary Search
+
 1) Include YOUR NAME and the names of all people who helped/collaborated as per
 the syllabus and CS@Mines collaboration policy. [This is an individual assignment]
 
