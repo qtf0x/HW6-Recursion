@@ -1,16 +1,15 @@
 ### CSCI 341 - Computer Organization (Spring 2022)
 # Recursive Binary Search
 
-1) Include YOUR NAME and the names of all people who helped/collaborated as per
-the syllabus and CS@Mines collaboration policy. [This is an individual assignment]
+1) Include YOUR NAME and the names of all people who helped/collaborated as per the syllabus and CS@Mines collaboration policy. [This is an individual assignment]
 
     Vincent Marias
 
-2) Pseudocode (in C/Java/Python/etc) for your implementation [yes it should also be
-recursive].
+2) Pseudocode (in C/Java/Python/etc) for your implementation [yes it should also be recursive].
 
     ```c
-    int binarySearch(int* arrAddr, int startIndex, int endIndex, int searchVal) {
+    int binarySearch(int* arrAddr, int startIndex, int endIndex, int searchVal) 
+    {
         printf("Summation: %d\n", sum(arrAddr + startIndex, 
                (endIndex - startIndex) + 1));
 
