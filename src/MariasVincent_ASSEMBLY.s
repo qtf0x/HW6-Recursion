@@ -98,9 +98,9 @@
             jal zero, binarySearch_done
 
         binarySearch_done:
-            lw t1, 4(sp)        # restore t1
-            lw t0, 8(sp)        # restore t0
-            lw ra, 12(sp)       # restore ra
+            lw t1, 8(sp)        # restore t1
+            lw t0, 12(sp)       # restore t0
+            lw ra, 16(sp)       # restore ra
             addi sp, sp, 20     # pop the stack frame
 
             jalr zero, ra, 0    # return to the caller
