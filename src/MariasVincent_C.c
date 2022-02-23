@@ -9,7 +9,8 @@ int sum(int* arrAddr, int arrSize) {
 }
 
 int binarySearch(int* arrAddr, int startIndex, int endIndex, int searchVal) {
-    printf("Summation: %d\n", sum(arrAddr, (endIndex - startIndex) + 1));
+    printf("Summation: %d\n", sum(arrAddr + startIndex, 
+           (endIndex - startIndex) + 1));
 
     int midIndex = (startIndex + endIndex) / 2;
 
