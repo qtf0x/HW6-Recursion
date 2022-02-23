@@ -12,19 +12,22 @@ recursive].
     ```c
     int binarySearch(int* arrAddr, int startIndex, int endIndex, int searchVal) {
         printf("Summation: %d\n", sum(arrAddr + startIndex, 
-            (endIndex - startIndex) + 1));
+               (endIndex - startIndex) + 1));
 
         int midIndex = (startIndex + endIndex) / 2;
 
-        if (searchVal == *(arrAddr + midIndex)) {          // base case
+        // base case
+        if (searchVal == *(arrAddr + midIndex)) {
             return midIndex;
-        } else if (searchVal < *(arrAddr + midIndex)) {    // recursive case left
+        // recursive case left
+        } else if (searchVal < *(arrAddr + midIndex)) {
             return binarySearch(arrAddr, startIndex, midIndex - 1, searchVal);
-        } else {                                          // recursive case right
+        // recursive case right
+        } else {
             return binarySearch(arrAddr, midIndex + 1, endIndex, searchVal);
         }
 
-        return -1;                                        // fail case
+        return -1;    // fail case
     }
     ```
 
