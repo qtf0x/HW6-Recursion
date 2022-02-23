@@ -54,7 +54,7 @@ int main() {
     int searchIndex = binarySearch(arrAddr, 0, endIndex - 1, searchVal);
 
     printf(indexPrompt, searchIndex);
-    printf(valuePrompt, searchVal);
+    printf(valuePrompt, *(arrAddr + searchIndex));
 
     return 0;
 }
