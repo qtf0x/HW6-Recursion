@@ -1,7 +1,8 @@
 #    BinarySearch.s
 #
 #    A simple, recursive implementation of the binary search algorithm, written 
-#    in RISC-V Assembly. No error-handling is performed, and input is assumed #    to be pre-sorted in ascending order. Returns -1 if value not found.
+#    in RISC-V Assembly. No error-handling is performed, and input is assumed 
+#    to be pre-sorted in ascending order. Returns -1 if value not found.
 #
 #    @author Vincent Marias
 
