@@ -5,6 +5,8 @@
 
     Vincent Marias
 
+<br>
+
 2) Pseudocode (in C/Java/Python/etc) for your implementation [yes it should also be recursive].
 
     ```c
@@ -30,6 +32,8 @@
     }
     ```
 
+<br>
+
 3) Describe the challenges you encountered and how you surmounted them.
 
 - When I was writing my C implementation (before the assembly one), I kept getting very weird results. At first it seemed like my function was somehow not being inclusive of the end index. But I realized that I had forgotten to decrement or increment the middle index value before recursing left or right respectively. That way, we get the correct range of indices for each recursive call.
@@ -38,16 +42,22 @@
 
 - I had to modify my original `sum` procedure so that it takes arguments from `a6` and `a7` now. I figured this was simpler and cleaner than storing and restoring `a2` and `a3` inside the `binarySearch` procedure.
 
+<br>
+
 4) What did you like about the assignment?
 
 - I like that we are finally writing something in assembly that seems useful in the real world. Binary search is a real search algorithm that real engineers use, and this assignment feels more worthwhile as a result.
 
 - I also like that the algorithm chosen for this assignment is relatively simple. If we had to implement some much more complex recursive algorithm as our first foray into assembly recursion, that would have been ... cruel.
 
-1) How long did you spend working on this assignment?
+<br>
+
+5) How long did you spend working on this assignment?
 
     ~3 hours
 
-2) A description of any features you added for extra credit (if any)
+<br>
+
+6) A description of any features you added for extra credit (if any)
 
     N/A
