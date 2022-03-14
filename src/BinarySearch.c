@@ -1,8 +1,8 @@
 /*
     BinarySearch.c
 
-    A simple, recursive implementation of the binary search algorithm, written 
-    in C. No error-handling is performed, and input is assumed to be pre-sorted 
+    A simple, recursive implementation of the binary search algorithm, written
+    in C. No error-handling is performed, and input is assumed to be pre-sorted
     in ascending order. Returns -1 if value not found.
 
     @author Vincent Marias
@@ -13,29 +13,30 @@
 int sum(int* arrAddr, int arrSize) {
     int result = 0;
 
-    for (int i = 0; i < arrSize; ++i) result += *(arrAddr + i);
+    for (int i = 0; i < arrSize; ++i)
+        result += *(arrAddr + i);
 
     return result;
 }
 
 int binarySearch(int* arrAddr, int startIndex, int endIndex, int searchVal) {
-    printf("Summation: %d\n", sum(arrAddr + startIndex, 
-           (endIndex - startIndex) + 1));
+    printf("Summation: %d\n",
+           sum(arrAddr + startIndex, (endIndex - startIndex) + 1));
 
     int midIndex = (startIndex + endIndex) / 2;
 
-    // base case
     if (searchVal == *(arrAddr + midIndex)) {
+        // base case
         return midIndex;
-    // recursive case left
     } else if (searchVal < *(arrAddr + midIndex)) {
+        // recursive case left
         return binarySearch(arrAddr, startIndex, midIndex - 1, searchVal);
-    // recursive case right
     } else {
+        // recursive case right
         return binarySearch(arrAddr, midIndex + 1, endIndex, searchVal);
     }
 
-    return -1;    // fail case
+    return -1; // fail case
 }
 
 int main() {
@@ -60,7 +61,7 @@ int main() {
     }
 
     int searchVal = 0;
-    
+
     printf("%s", searchPrompt);
     scanf("%d", &searchVal);
 
